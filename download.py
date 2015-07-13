@@ -35,7 +35,7 @@ def get_folder_path(dt, resolution):
   bucket_name = (
       '{resolution}d/{year}_{month}_{day}_{hour}_{minute}_00').format(
         **get_format_args(dt, resolution))
-  absolute_path = os.path.abspath('./' + relative_path)
+  absolute_path = os.path.abspath('./' + bucket_name)
   if not os.path.exists(absolute_path):
     os.makedirs(absolute_path)
   return bucket_name, absolute_path
